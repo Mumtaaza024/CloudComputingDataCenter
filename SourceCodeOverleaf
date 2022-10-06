@@ -1,0 +1,138 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Cloud Computing Data Center
+}
+
+\author{\IEEEauthorblockN{1\textsuperscript{st} Mumtaaza Eky Wardana}
+\IEEEauthorblockA{\textit{Elektronika dan Instrumentasi} \\
+\textit{Universitas Gajah Mada}\\
+mumtaazaeky01@mail.ugm.ac.id}
+\and
+\IEEEauthorblockN{2\textsuperscript{nd} Jihan Muthi'ah}
+\IEEEauthorblockA{\textit{Elektronika dan Instrumentasi} \\
+\textit{Universitas Gajah Mada}\\
+jihanmuthiah1@mail.ugm.ac.id}
+\and
+\IEEEauthorblockN{3\textsuperscript{rd} Ulfa Uswatun Khasanah}
+\IEEEauthorblockA{\textit{Elektronika dan Instrumentasi} \\
+\textit{Universitas Gajah Mada}\\
+ulfa.uswatun@mail.ugm.ac.id}
+}
+
+\maketitle
+
+\begin{abstract}
+Perkembangan sistem data center cloud computing yang pesat tentunya terdapat tantangan yang dihadapi. Masalah pemakaian energi untuk kebutuhan data center membuat biaya yang dikeluarkan menjadi mahal. Oleh karena itu, data center dituntut untuk dapat mengonsumsi energi secara efisien. Untuk dapat menggunakan data center secara efisien maka dibuatlah suatu design data center. Desain data center terdiri dari 2 ruang dengan total 6 rak. Ruangan pertama berisi 4 komputer yang ditujukan untuk melakukan cloud computing dan penyimpanan sedangkan komputer ruangan kanan akan digunakan untuk keperluan umum. Simulasi dilakukan dengan empat metode, yaitu : Base scenario, Max Load, Max Load tanpa failures dan performance interference dan random. Karena adanya beberapa hambatan yang ditemui ketika simulasi seperti kurangnya fitur dari OpenDC maka data yang dapat diambil hanya sebatas data dari Hardware yang digunakan pada data center.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Data Center, Cloud Computing
+\end{IEEEkeywords}
+
+\section{Introduction}
+Pada beberapa tahun ini cloud computing sudah merambah ke berbagai bidang seperti industri gaming, musik, perbankan, hingga “Internet of Things”. Kemajuan teknologi saat ini membuat layanan cloud computing dapat berkembang secara drastis, hal ini dapat terjadi karena adanya keterlibatan data center. Hubungan antara cloud computing dan data center tidak dapat dipisahkan. Secara umum dapat diartikan dengan pusat data. Jadi, dapat diartikan bahwa data center adalah sebuah fasilitas yang dimanfaatkan atau dikelola untuk kebutuhan sistem dan komponen – komponen komputer, seperti penyimpanan data (database) dan telekomunikasi. Sedangkan, secara definisi data center adalah bagian penting dari cloud computing karena menyediakan penyimpanan dan kekuatan pemrosesan yang diperlukan bagi bisnis untuk menjalankan aplikasi mereka. Data center dapat digunakan untuk mendukung cloud publik, pribadi, atau hybrid. 
+
+Pemakaian energi yang tinggi pada cloud untuk kebutuhan operasional data center membuat biaya yang dikeluarkan menjadi mahal, hal itu menjadi masalah utama dari infrastruktur cloud. Data center menjadi penyumbang konsumsi energi terbesar di industri TI yang diperkirakan akan mengkonsumsi 8,5 persen listrik global pada tahun 2035 mendatang.Oleh karena itu, pengelolaan data center dituntut untuk mengkonsumsi energi secara lebih efisien. Ada beberapa langkah yang dapat digunakan untuk efisiensi energi data center yaitu pertama adalah mengurangi ketergantungan pendingin. Tata letak peralatan yang stategis dan aliran udara yang efisien dapat meningkatkan efisiensi pendinginan. Kedua adalah mengidentifikasi dan membunuh server zombi, dimana server zombi merupakan sistem yang tidak lagi digunakan namun masih tetap menyala dan menghabiskan energi. Untuk solusinya yaitu dengan menyiapkan alat pemantauan untuk pengawasan langsung tentang server. Ketiga adalah mengurangi dan mengoptimalkan ruangan. Fokus pada desain modular yang dapat ditingkatkan atau diturunkan untuk memenuhi kebutuhan perusahaan adalah ide bagus untuk mempertahankan tingkat efisiensi yang tepat dan mengontrol penggunaan daya data center.
+
+\subsection{Related Works}
+Penulis pada jurnal [1] mendiskusikan tentang efisiensi energi pada cloud data center dengan cara melakukan survey pada hardwere yang digunakan. Pada server tunggal mereka berfokus menggunakan multi-core prosessor dengan berfokus pada efisiensi penggunaan memori, hardwere, dan penyimpanan yang berupa HDD dan SSD sedangkan pada jurnal [2] penggunaan energi diperhitungkan berdasarkan energi yang digunakan untuk komunikasi, penyimpanan, dan komputasi. Selain itu penggunaan energi juga dipengaruhi oleh peninggkatan suhu pada lingkungan data center yang akan dihitung lebih lanjut menggunakan hukum termodinamika untuk membuat model cooling system energy consumption.
+
+Penggunaan multi-core processor dapat digunakan untuk secara bersamaan mengurangi energi dan total waktu komputasi pekerjaan yang besar dengan cara merancang dua schedule yang digunakan untuk pemetaan alur kerja yang efisien. Selain itu Single-Valued Decompisotion berbasis Teknik penyaringan kolaboratif juga digunakan untuk menemukan GPU yang ideal untuk aplikasi yang sama sehingga aplikasi tidak saling tumpang tindih.
+
+
+\subsection{Propose Approach}
+
+Penelitian yang dilakukan akan berfokus pada desain cloud data center sederhana dengan mengoptimalkan penggunaan Hardwere menggunakan simulator berbasis online, OpenDC. Pengoptimalan kinerja hardwere dilakukan dengan cara menggabungkan metode yang terdapat pada jurnal [1] dan simulasi dengan beberapa keadaan yang telah ditentukan sebelumnya. Karena keterbatasan pada simulator OpenDC temperatur pada desain data center tidak diperhitungkan atau diabaikan serta karena pilihan hardware yang ada sangat terbatas maka hardware yang digunakan adalah hardware yang mungkin paling cocok untuk digunakan pada model cloud computing data center ini. Hasil yang akan diamati adalah bagaimana penggunaan daya pada model data center serta kerja CPU yang digunakan.
+
+
+\section{Methods}
+OpenDC merupakan sebuah simulator data center online yang berfokus pada tata letak model data center, penempatan rak, perangkat pada rak, penggunaan real-world CPU, GPU, memory, storage, dan network pada tiap perangkat serta berbagai pilihan scheduling pada data center. Penelitian akan lebih berfokus pada efisiensi penggunaan hardware serta penyimpanan yang terdapat pada empat rak utama serta dua rak tambahan yang digunakan untuk pemantauan rak utama. 
+
+Pemilihan hardware dengan cara melihat clockrate dan jumlah core yang terdapat pada setiap hardware serta memperhatikan penggunaan daya pada tiap tiap hardware. CPU yang digunakan adalah Intel Xeon  E-2246G dengan 12 core namun dengan 3600 clockrate. NVIDIA Tesla V100 dipilih untuk GPU pada device yang digunakan karena GPU ini memiliki jumlah clockrate dan penggunaan daya yang sama dengan NVIDIA GTX 4 1080 namun dengan jumlah core yang lebih banyak yaitu 5120 core. Memory 2 X 32GB dipilih agar dapat mengoperasikan banyak software dan mengolah data sekaligus. Untuk penyimpanan data setiap rak akan menggunakan dua buah Western Digital seri MTA9ASF2G72PZ-3G2E1 dengan total delapan terrabyte memori penyimpanan dan dengan kecepatan baca data hingga enam gigabyte tiap detik. 
+
+Untuk ruangan kedua peragkat yang digunakan menggunakan seri yang sama dengan pengurangan jumlah unit hardware yang digunakan pada tiap rak. Desain ruangan kedua merupakan ruangan yang ditujukan untuk pemantauan dan  pengoprasian secara general data center.
+
+Dalam jurnal [2] temperature ruangan serta cooling system sangat diperhatikan dalam model data center yang digunakan. Hal ini dikarenakan efisiensi penggunaan energi tidak seratus persen maka ada sebagian energi yang akan terbuang ke lingkungan dan menjadi panas. Apabila panas dibiarkan maka makin banyak energi yang akan terbuang serta panas pada ruangan yang berlebih akan mengakibatkan kerusakan hardware dan menyebabkan kerusakan yang fatal pada data center oleh sebab itu temperature serta model pendingin ruangan harus diperhatikan serta suhu dan kelembaban pada ruangan tempat rak di letakkan juga harus dijaga dan dipantau dengan seksama. Dikarenakan kekurangan simulator OpenDC yang hanya berfokus pada model data center dan penempatan rak maka pengaruh luar seperti temperature serta cooling system akan dianggap temperature pada model ruangan data center adalah temperature yang ideal bagi data center. 
+
+Simulasi dilakukan dengan empat skenario dan  skenario dasarnya dilakukan dengan load sebesar 0.5 dengan failure dan interference yang dinyalakan serta dengan scheduler active-servers. Untuk skenario kedua dilakukan dengan load sebesar satu tanpa failure dan interference. Skenario ketiga sangat mirip dengan skenario kedua hanya saja dengan tambahan failure dan interference dan skenario yang terakhir adalah random untuk mengetahui keadaan data center menggunakan scheduler random dengan besar load sebesar satu dan dengan failre dan interference yang dinyalakan. 
+
+
+\section{Results}\label{AA}
+\subsection{CPU Cycles}
+
+Pada pengulangan satu kali hanya skenario random yang memiliki overcommit CPU cycle sebanyak 11 MFLOP yang kemudian naik pada skenario max load, max load tanpa fail, serta random sebanyak 6.5 MFLOP, 7 MLOP, dan 5 MFLOP untuk pengulangan 10 kali tiap skenario. Pada skenario dengan seratus kali pengulangan tidak menunjukkan kenaikan dibandingkan simulasi sebelumnya yang menggunakan sepuluh kali pengulangan tiap skenarionya namun rentang antara nilai minum dan maksimum yang ditunjukkan pengalami peningkatan yang cukup drastic dimana base scenario yang pada dua simulasi sebelumnya garis batas minimum tidak terlihat, pada simulasi dengan seratus kali pengulangan terlihat garis batas minimum-maksimum walaupun nilai simulasi masih berada diantara garis batas minimum-maksimum yang ada.
+
+\begin{figure}
+    \centering
+    \includegraphics{Overcomm_1x_repeat.jpg}
+    \caption{Overcomm. CPU Cycles 1x repeat per scenario}
+    \label{Overcomm1x}
+    
+    \centering
+    \includegraphics{Overcomm_10x_repeat.png}
+    \caption{Overcomm. CPU Cycles 10x repeat per scenario}
+    \label{Overcomm10x}
+    
+    \centering
+    \includegraphics{Overcomm_100x_repeat.png}
+    \caption{Overcomm. CPU Cycles 100x repeat per scenario}
+    \label{Overcomm100x}
+\end{figure}
+
+\subsection{Total Power Consumption}
+
+Daya yang digunakan pada model ini tidak terlalu besar dan tidak melakukan peningkatan yang segnifikan untuk tiap pengulangannya. Pada satu kali pengulangan total daya yang digunakan hanya berkisar diantara 300mWh untuk base scenario dan sekitar dua kali lipat untuk scenario lainnya. Pada pengulangan sepuluh kali tiap scenario peningkatan daya pada tiap tiap scenario tidak terlalu signifikan dibandingkan dengan satu kali pengulangan. Daya yang digunakan pada base scenario masih berada pada kisaran 300mWh dan perbedaan terdapat pada scenario max load tanpa kesalahan yang menunjukkan penurunan penggunaan daya dari yang sebelumnya berada di 650mWh sekarang turun pada kisaran 580mWh. Penggunaan daya pada simulasi dengan seratus kali pengulangan pada tiap skenario juga menunjukkan peningkatan namun jumlah yang kecil dengan kisaran antara 50 hingga 80 mWh. Pada base scenario garis batas minimum-maksimum juga mengalami kenaikan nilai dibandingkan simulasi sebelumnya.
+
+\begin{figure}
+    \centering
+    \includegraphics{Power_1x_repeat.png}
+    \caption{Total Power Consumption 1x repeat per scenario}
+    \label{Power1x}
+    
+    \centering
+    \includegraphics{Power_10x_repeat.png}
+    \caption{Total Power Consumption 10x repeat per scenario}
+    \label{Power10x}
+    
+    \centering
+    \includegraphics{Power_100x_repeat.png}
+    \caption{Total Power Consumption 100x repeat per scenario}
+    \label{Power100x}
+\end{figure}
+
+\subsection{Discussion}
+Simulasi desain data center yang dilakukan menggunakan menghasilkan sebuah data yang sesuai dengan metode yang digunakan. Simulasi berfokus pada pengoptimalan penggunaan hardware yang digunakan pada desain data center dengan menggunakan empat scenario dengan menggunakan tiga pengulangan yang berbeda. Terdapat satu, sepuluh, dan seratus kali pengulangan yang digunakan pada tiap scenarionya dan menghasilkan beberapa data yang mengindikasikan desain data center yang dibuat sudah dapat dikatakan optimal dalam penggunaan daya serta penggunaan pada CPU. 
+
+Total penggunaan daya pada data center tidak menunjukkan perubahan yang besar pada tiap pengulangannya. Penggunaan daya pada Base scenario hanya berkisar pada nilai 250 hingga 300mWh dan penggunaan daya terbesar dapat dilihat pada scenario Load Factor tanpa failure dan interference yang dimana total nilai daya yang digunakan berada pada kisaran nilai 580-650mWh pada tiap scenario pengulangan yang dilakukan pada simulasi. 
+
+Pada desain data center kami sempat mengalami overcommit pada siklus CPU nya hal ini kemungkinan disebabkan karena terlalu banyak virtual machine yang dimuat sehingga penggunaan CPU hampir mencapai 100% dan hal ini dapat menyebabkan sebagian  virtual machine gagal. Pada satu kali pengulangan overcommit CPU hanya terjadi pada scenario random dengan nilai 11 mFLOP. Overcommit pada siklus CPU ini terus meningkat pada beberapa scenario bersamaan meningkatnya pengulangan yang dilakukan pada tiap scenario dengan nilai tertingginya terjadi pada scenario Max Load Factor tanpa Failure dan Interference dengan 7mFLOP.
+
+Semua nilai yang didapatkan dari hasil simulasi pada data center masih harus diuji kembali kebenarannya dikarenakan satuan yang digunakan pada grafik yang ditunjukkan masih bersifat ambigu bagi kami. Contohnya dapat dilihat pada grafik Total Power Consumption serta grafik Overcommit CPU Cycles. Pada grafik Total Power Consumption satuan yang digunakan adalah mWh atau miliWatt hour yang dimana penggunaan daya pada data center seharusnya lebih besar daripada itu.
+
+\section{Conclusion}
+Desain dari cloud computing data center milik kami telah memenuhi tujuan dari penelitian secara teori dan metode dengan total penggunaan daya serta overcommit siklus CPU dengan nilai yang kecil. Namun menurut kami nilai yang didapatkan masih harus diuji kembali kebenaran serta kepastiannya dikarenakan nilai satuan yang digunakan pada simulator OpenDC masih bersifat ambigu bagi kami.
+
+\section{Suggestion}
+Simulator OpenDC merupakan sebuah simulator data center online yang bisa digunakan oleh siapa saja namun banyak kekurangan dari simulator ini. Saran yang bisa kami sampaikan untuk mendapatkan data penelitian yang lebih akurat adalah dengan menggunakan simulator yang lebih akurat seperti TileFlow.
+
+
+\begin{thebibliography}{00}
+\bibitem{b1} Choudhury, T., Katal, A., and Dahiya, S. 2022, February. Energy Efficiency in Cloud Computing Data Center: A Survey on Hardware Technologies. In Cluster Computing.
+\bibitem{b2} Uchechukwu, K. Li and Y. Shen. 2014, June. Energy Consumption in Cloud Computing Data Centers. In Internasional Journal of Cloud Computing and Services Science (IJ-CLOSER).
+\bibitem{b3} El Kafhali, S., Salah K. Stochastic Modelling and Analysis of Cloud Computing Data Center. In 2017 s0th Conference on Innovation in Clouds, Internet and Network (ICIN).
+\bibitem{b4}Kumar, V., Lata, M. 2016, March. Innovative Cooling Strategies for Cloud Computing Data Centers.
+\bibitem{b5} Kadry, S., Abdulhassan, A. 2014, April. Green Cloud Computing: Data Center Case Study. In book: Handbook of Research on Cloud Infrastructures for Big Data Analytics (pp.26).
+\bibitem{b6} Ghani, I., Niknejad, N. 2015, May. Energy Saving in Green Cloud Computing Data Centers: A Review. In Journal of Theoretical and Applied Information Technology, 1074(1)
+\end{thebibliography}
+\end{document}
